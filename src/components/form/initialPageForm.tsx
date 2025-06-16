@@ -5,6 +5,8 @@ import Input from "./Input";
 import { apiUrl } from "../var/url";
 import LoginErrorMsg from "../errorMsg/LoginErrorMsg";
 
+import style from './styles/form/form.module.css';
+
 type UserFormProps = {
     setCookie: (name: string, value: any, options?: any) => void;
     apiPath: string;
@@ -34,11 +36,13 @@ export default (props: UserFormProps)=>{
 
     return (
         <>
-            <form>
+            <form className={style.form}>
                 <Input type="text" placeholder="Nome" onchange={setNome}/>
                 <Input type="password" placeholder="Senha" onchange={setSenha} />
-                <Button type="submit" texto="login" action={action} />
-                {props.aditionalButtons}
+                <div className={style.buttonsBox}>
+                    <Button type="submit" texto="login" action={action} />
+                    {props.aditionalButtons}
+                </div>
             </form>
             <LoginErrorMsg msg={errorMsg} />
         </>

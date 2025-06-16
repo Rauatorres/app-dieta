@@ -1,3 +1,5 @@
+import style from './styles/form/form.module.css';
+
 type InputProps = {
     type: string;
     placeholder: string
@@ -5,4 +7,4 @@ type InputProps = {
 }
 
 export default (props: InputProps) => 
-    <input type={props.type} placeholder={props.placeholder} onChange={(e) => props.onchange(e.target.value)}/>
+    <input className={style.input} type={props.type} placeholder={props.placeholder} onChange={(e) => props.onchange(e.target.value)}/>

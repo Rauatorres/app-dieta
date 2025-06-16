@@ -1,4 +1,5 @@
 import type React from "react";
+import style from './styles/form/form.module.css';
 
 type ButtonProps = {
     type: undefined | "submit" | "reset" | "button";
@@ -16,14 +17,17 @@ export default (props: ButtonProps) =>{
     }
 
     const path = props.path;
+    
     if(typeof path == 'string'){
         return (
-            <button onClick={() => window.location.href = path} type={props.type}>{props.texto}</button>
+            <button className={
+                props.texto == 'cadastrar' ? `${style.button} ${style.cadastrarLinkButton}` : style.button
+            } onClick={() => window.location.href = path} type={props.type}>{props.texto}</button>
         );
     }else{
         return props.type == "submit" ? 
-        <button onClick={(e) => submitHandler(e)} type={props.type}>{props.texto}</button> :
-        <button type={props.type}>{props.texto}</button>
+        <button className={style.button} onClick={(e) => submitHandler(e)} type={props.type}>{props.texto}</button> :
+        <button className={style.button} type={props.type}>{props.texto}</button>
     }
 
 }
