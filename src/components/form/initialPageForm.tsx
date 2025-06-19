@@ -5,12 +5,15 @@ import Input from "./Input";
 import { apiUrl } from "../var/url";
 import LoginErrorMsg from "../errorMsg/LoginErrorMsg";
 
-import style from './styles/form/form.module.css';
+// import './styles/form.css';
+
 
 type UserFormProps = {
     setCookie: (name: string, value: any, options?: any) => void;
     apiPath: string;
-    aditionalButtons: React.ReactNode
+    aditionalButtons: React.ReactNode;
+    style: CSSModuleClasses;
+    submitButtonText: string
 }
 
 export default (props: UserFormProps)=>{
@@ -18,6 +21,7 @@ export default (props: UserFormProps)=>{
     const [senha, setSenha] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
 
+    const style = props.style;
 
     async function action(){
         const result = await axios.post(`${apiUrl}/${props.apiPath}`, { nome: nome, senha: senha });
@@ -34,17 +38,27 @@ export default (props: UserFormProps)=>{
         }
     }
 
+    function showErrorMsg(){
+        console.log(errorMsg);
+        console.log('teste');
+        if(errorMsg != ''){
+            return (<LoginErrorMsg msg={errorMsg} />);
+        }else{
+            return(<></>);
+        }      
+    }
+
     return (
         <>
-            <form className={style.form}>
-                <Input type="text" placeholder="Nome" onchange={setNome}/>
-                <Input type="password" placeholder="Senha" onchange={setSenha} />
+            <form className={`form ${style.form}`}>
+                <Input style={style} type="text" placeholder="Nome" onchange={setNome}/>
+                <Input style={style} type="password" placeholder="Senha" onchange={setSenha} />
                 <div className={style.buttonsBox}>
-                    <Button type="submit" texto="login" action={action} />
+                    <Button style={style} type="submit" texto={props.submitButtonText} action={action} />
                     {props.aditionalButtons}
                 </div>
             </form>
-            <LoginErrorMsg msg={errorMsg} />
+            {showErrorMsg()}
         </>
 
     )

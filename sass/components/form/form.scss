@@ -1,0 +1,61 @@
+@use './variables' as *;
+
+.form{
+    width: $formWidth;
+    margin: auto;
+    margin-top: $formTopMargin;
+    padding: $formPadding;
+    border-radius: $borderRadius1;
+    box-shadow: $formBoxShadow;
+
+    .button, .input{
+        font-size: $inputFontSize;
+        display: block;
+        width: $inputWidth;
+        margin: auto;
+        padding: $inputPadding;
+        border-radius: $borderRadius2;
+        border: none;
+    }
+    
+    .input{
+        margin-bottom: $inputBottomMargin;
+        width: $textInputWidth;
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    
+    .buttonsBox{
+        margin-top: $buttonBoxTopMargin;
+    }
+    
+    .button{
+        margin-top: $buttonTopMargin;
+        cursor: pointer;
+    }
+    
+    .loginLinkButton{
+        display: block;
+        width: $inputWidth;
+        font-size: $inputFontSize;
+        text-decoration: none;
+        margin: $buttonTopMargin auto;
+    }
+
+    .button, .loginLinkButton{
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+}
+
+.loginErrorMsg{
+    width: calc($formWidth + 2rem);
+    margin: $buttonTopMargin auto;
+    border-radius: $borderRadius2;
+    padding: $loginErrorMsgPadding;
+    font-size: calc($inputFontSize - 0.1rem);
+    background-color: $loginErrorMsgBGColor;
+    color: $loginErrorMsgTextColor;
+}

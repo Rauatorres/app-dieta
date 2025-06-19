@@ -1,0 +1,36 @@
+/* @import url("form.module.css"); */
+
+.form{
+    --formBgColor: #F3F3F3;
+}
+
+.form{
+    background-color: var(--formBgColor);
+}
+
+.input{
+    background-color: rgba(0, 0, 0, 0.096);
+    color: black;
+}
+.input::placeholder{
+    color: rgb(82, 82, 82);
+}
+.input:focus{
+    background-color: rgba(0, 0, 0, 0.185);
+}
+
+.button{
+    background-color: #A469CE;
+    color: white;
+}
+.loginLinkButton{
+    /* background-color: transparent;
+    color: white;
+    border: 2px solid #EBEBEB; */
+    color: rgb(87, 87, 87);   
+    /* background-color: red; */
+}
+.loginLinkButton:hover{
+    color: black;   
+    text-decoration: underline;
+}

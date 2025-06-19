@@ -1,0 +1,34 @@
+/* @import url("form.module.css"); */
+
+.form{
+    --formBgColor: #A469CE;
+}
+
+.form{
+    background-color: var(--formBgColor);
+}
+
+.input{
+    background-color: rgba(0, 0, 0, 0.164);
+    color: white;
+}
+.input::placeholder{
+    color: rgb(194, 194, 194);
+}
+.input:focus{
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+.button{
+    background-color: #EBEBEB;
+    color: #8357A3;
+}
+.cadastrarLinkButton{
+    background-color: transparent;
+    color: white;
+    border: 2px solid #EBEBEB !important;
+}
+.cadastrarLinkButton:hover{
+    background-color: #EBEBEB;
+    color: #8357A3;   
+}

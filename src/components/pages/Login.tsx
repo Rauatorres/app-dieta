@@ -2,11 +2,13 @@ import Button from "../form/Button";
 import Form from "../form/initialPageForm";
 import type { LoginProps } from "../types/PageProps";
 
+import style from '../form/styles/login.module.css';
+
 export default (props: LoginProps)=>{
     return (
-        <Form setCookie={props.setCookie} apiPath="login" 
+        <Form style={style} submitButtonText="login" setCookie={props.setCookie} apiPath="login" 
         aditionalButtons={( 
-            <Button type="button" texto="cadastrar" path="/cadastrar" />
+            <Button style={style} type="button" texto="cadastrar" path="/cadastrar" />
         )}/>
     )
 }

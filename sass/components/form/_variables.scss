@@ -1,0 +1,26 @@
+$borderRadius1: 1rem; 
+$borderRadius2: 0.5rem;
+$borderRadius3: 0.25rem;
+
+$formWidth: 23rem;
+$formTopMargin: 5rem;
+$formPadding: 3rem;
+$formBoxShadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.199);
+
+$inputWidth: 21rem;
+$inputFontSize: 1.3rem;
+$inputLeftPadding: 1.5rem;
+$inputPadding: 1rem $inputLeftPadding;
+$textInputWidth: calc($inputWidth - 1.5rem - $inputLeftPadding);
+
+$inputBottomMargin: 3rem;
+
+$buttonBoxTopMargin: 4rem;
+
+$buttonTopMargin: 2rem;
+
+$linkButtonFontSize: 1rem;
+
+$loginErrorMsgPadding: 1rem 2rem;
+$loginErrorMsgBGColor: rgb(240, 93, 73);
+$loginErrorMsgTextColor: white;

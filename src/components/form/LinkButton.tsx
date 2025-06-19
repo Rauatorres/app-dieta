@@ -1,7 +1,8 @@
 type Link = {
     path: string;
-    texto: string
+    texto: string;
+    style: CSSModuleClasses
 }
 
 export default (props: Link) => 
-    <a href={props.path}>{props.texto}</a>
+    <a className={'loginLinkButton ' + props.style.loginLinkButton} href={props.path}>{props.texto}</a>

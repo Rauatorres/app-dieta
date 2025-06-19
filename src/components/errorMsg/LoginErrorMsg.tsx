@@ -3,4 +3,4 @@ type LoginErrorMsgProps = {
 }
 
 export default (props: LoginErrorMsgProps)=>
-    <div>{props.msg}</div>
+    <div className="loginErrorMsg">{props.msg}</div>

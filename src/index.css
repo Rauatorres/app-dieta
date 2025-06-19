@@ -1,7 +1,60 @@
+.form {
+  width: 23rem;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.199);
+}
+.form .button, .form .input {
+  font-size: 1.3rem;
+  display: block;
+  width: 21rem;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+.form .input {
+  margin-bottom: 3rem;
+  width: 18rem;
+}
+.form .input:focus {
+  outline: none;
+}
+.form .buttonsBox {
+  margin-top: 4rem;
+}
+.form .button {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.form .loginLinkButton {
+  display: block;
+  width: 21rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 2rem auto;
+}
+.form .button, .form .loginLinkButton {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.loginErrorMsg {
+  width: 25rem;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: rgb(240, 93, 73);
+  color: white;
+}
+
 body {
   background-color: #EBEBEB;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,5 @@
+import Navbar from "../navbar/Navbar";
+
 type HomePageProps = {
     cookies: {
         [x: string]: any;
@@ -9,9 +11,12 @@ export default (props: HomePageProps)=>{
 
 
     return (
-        <div>
-            <h1>Usuário: {props.cookies.nome}</h1>
-        </div>
+        <>
+            <Navbar />
+            <div>
+                <h1>Usuário: {props.cookies.nome}</h1>
+            </div>
+        </>
 
     );
 }

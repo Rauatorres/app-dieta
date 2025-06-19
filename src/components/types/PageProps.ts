@@ -1,5 +1,5 @@
 type LoginProps = {
-    setCookie: (name: string, value: any, options?: any) => void;
+    setCookie: (name: string, style: CSSModuleClasses, value: any, options?: any) => void;
 }
 
 export type { LoginProps };
