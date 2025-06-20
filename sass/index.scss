@@ -1,5 +1,7 @@
 @use 'variables' as geral;
+@use 'mixins' as mixins;
 @use './components/form/form.scss' as form;
+@use './components/navbar/navbar.scss' as nav;
 
 body{
     background-color: geral.$mainBGColor;

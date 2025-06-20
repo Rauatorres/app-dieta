@@ -12,7 +12,7 @@ export default (props: HomePageProps)=>{
 
     return (
         <>
-            <Navbar />
+            <Navbar username={props.cookies.nome} />
             <div>
                 <h1>Usuário: {props.cookies.nome}</h1>
             </div>
