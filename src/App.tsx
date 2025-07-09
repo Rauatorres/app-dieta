@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Login setCookie={setCookie}/>}/>
           <Route path="/cadastrar" element={<Cadastrar setCookie={setCookie}/>}/>
           <Route path="/home" element={<Home cookies={cookies} removeCookie={removeCookie}/>}/>
-          <Route path="/pratos" element={<Pratos/>}/>
+          <Route path="/pratos" element={<Pratos cookies={cookies} removeCookie={removeCookie}/>}/>
           <Route path="/usuario" element={<Usuario/>}/>
         </Routes>
       </BrowserRouter>

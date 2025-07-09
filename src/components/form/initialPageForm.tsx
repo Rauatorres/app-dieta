@@ -25,13 +25,31 @@ export default (props: UserFormProps)=>{
 
     async function action(){
         const result = await axios.post(`${apiUrl}/${props.apiPath}`, { nome: nome, senha: senha });
+
+        console.log(result.data);
+
+        function userDataWithoutPassword(userObj: any){
+            const userArray = Object.entries(userObj);
+            const userArrayWithoutPassword = userArray.filter(([key, _value]) => key != 'senha');
+            let userObjWithoutPassword: any = {};
+
+            for(let [key, value] of userArrayWithoutPassword){
+                userObjWithoutPassword[key] = value;
+            }
+
+            return userObjWithoutPassword;
+        }
+
         if('error' in result.data){
             setErrorMsg(result.data.error);
         }else{
-            props.setCookie('idusuario', result.data.id, {
-                path: '/'
-            });
-            props.setCookie('nome', result.data.nome, {
+            // props.setCookie('idusuario', result.data.id, {
+            //     path: '/'
+            // });
+            // props.setCookie('nome', result.data.nome, {
+            //     path: '/'
+            // });
+            props.setCookie('usuario', result.data.nome, {
                 path: '/'
             });
             window.location.href = '/home';
