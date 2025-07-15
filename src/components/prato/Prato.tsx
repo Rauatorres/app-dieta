@@ -5,6 +5,9 @@ import { useState, type ChangeEvent } from "react";
 import Input from "./Input";
 import BotaoAdicionarIngrediente from "./BotaoAdicionarIngrediente";
 import Ingrediente from "./Ingrediente";
+import { FaBowlFood, FaCaretUp } from "react-icons/fa6";
+import { PiCookingPot, PiCookingPotFill } from "react-icons/pi";
+import Preparo from "./Preparo";
 
 export default (props: PratoType) => {
 
@@ -65,33 +68,39 @@ export default (props: PratoType) => {
     }
 
     return (
-        <div style={{display: display}}>
-            <div>
-                <div>
-                    <div></div>
+        <div style={{display: display}} className="Prato">
+            <div className="Block">
+                <div className="Area PratoTituloArea">
+                    <div className="IconeTituloBox"><FaBowlFood /></div>
                     {mostrarElemento((<span>{nome}</span>), (<Input value={nome} onchange={(e: ChangeEvent<HTMLInputElement>) => setNome(e.target.value)} />))}
                     
                 </div>
-                <div>{mostrarIngredientes()}</div>
-                <div><BotaoAdicionarIngrediente idPrato={props.id} setIngredientes={setIngredientes} ingredientes={ingredientes}/></div>
+                <div className="Area AreaIngredientes">
+                    <div className="Ingredientes">{mostrarIngredientes()}</div>
+                    <div><BotaoAdicionarIngrediente idPrato={props.id} setIngredientes={setIngredientes} ingredientes={ingredientes}/></div>
+                </div>
             </div>
-            <div>
-                <div>Modo de Preparo</div>
-                {mostrarElemento((<span>{preparo}</span>), (<Input value={preparo} onchange={(e: ChangeEvent<HTMLInputElement>) => setPreparo(e.target.value)} />))}
+            <div className="Block">
+                <div className="Area ModoDePreparoTituloArea">
+                    <div><PiCookingPotFill /></div>
+                    <div>Modo de Preparo</div>
+                </div>
+                {mostrarElemento((<Preparo texto={preparo}/>), (<Input value={preparo} onchange={(e: ChangeEvent<HTMLInputElement>) => setPreparo(e.target.value)} />))}
+                <div>
+                    {mostrarElemento((
+                        <div className="Area ">
+                            <button onClick={() => {setModoEditar(true)}}>editar</button>
+                            <button onClick={excluir}>excluir</button>
+                        </div>
+                    ), (
+                        <div className="Area ">
+                        <button onClick={editar}>salvar</button> 
+                        <button onClick={() => setModoEditar(false)}>cancelar</button>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div>
-                {mostrarElemento((
-                    <>
-                        <button onClick={() => {setModoEditar(true)}}>editar</button>
-                        <button onClick={excluir}>excluir</button>
-                    </>
-                ), (
-                    <>
-                       <button onClick={editar}>salvar</button> 
-                       <button onClick={() => setModoEditar(false)}>cancelar</button>
-                    </>
-                ))}
-            </div>
+            <div className="Area "><button><FaCaretUp /></button></div>
         </div>
     );
 }

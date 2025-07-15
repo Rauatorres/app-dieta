@@ -2,6 +2,7 @@
 @use 'mixins' as mixins;
 @use './components/form/form.scss' as form;
 @use './components/navbar/navbar.scss' as nav;
+@use './components/prato/prato' as prato;
 
 body{
     background-color: geral.$mainBGColor;

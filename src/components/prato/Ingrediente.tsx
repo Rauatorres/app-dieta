@@ -32,7 +32,7 @@ export default (props: IngredienteProps) =>{
     function mostrarIngrediente(){
         if(ingredienteDisponivel){
             return (
-                <div onMouseOver={() => setMostrarBotaoDeletar(true)} onMouseLeave={() => setMostrarBotaoDeletar(false)} >
+                <div className="Ingrediente" onMouseOver={() => setMostrarBotaoDeletar(true)} onMouseLeave={() => setMostrarBotaoDeletar(false)} >
                     <span onClick={() => setModoEditar(true)}>
                         {modoEditar? (<><input onBlur={editar} onChange={(e) => setNomeEditar(e.target.value)} type="text" value={nomeEditar} /></>) : nome}
                     </span>

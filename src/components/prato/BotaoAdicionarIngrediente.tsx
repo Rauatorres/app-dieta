@@ -1,6 +1,10 @@
 import axios from "axios";
 import { apiUrl } from "../var/url";
 
+import styles from './styles/ingredientes/addButton.module.css';
+import { MdAdd } from "react-icons/md";
+import { RiAddLine } from "react-icons/ri";
+
 export default (props: any) =>{
     function addIngrediente(){
         async function apiIngrediente(){
@@ -17,7 +21,7 @@ export default (props: any) =>{
     }
 
     return (
-        <button onClick={addIngrediente}>+</button>
+        <button className={styles.button} onClick={addIngrediente}><RiAddLine /></button>
         // <button onClick={props.setIngredientes(ingredientes => [...ingredientes, ])}>+</button>
         
     )

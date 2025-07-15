@@ -105,6 +105,74 @@ nav ul a:hover * {
   color: black;
 }
 
+.Prato {
+  background-color: #A469CE;
+  width: fit-content;
+  margin: 4rem;
+  padding: 1rem;
+  color: white;
+}
+.Prato div {
+  width: fit-content;
+}
+.Prato .Block {
+  margin-bottom: 4rem;
+}
+.Prato .Area {
+  width: 40rem;
+  margin: 2rem;
+}
+.Prato .PratoTituloArea, .Prato .ModoDePreparoTituloArea {
+  display: flex;
+  align-items: center;
+}
+.Prato .PratoTituloArea {
+  font-size: 2rem;
+}
+.Prato .PratoTituloArea div {
+  margin-right: 2rem;
+}
+.Prato .PratoTituloArea .IconeTituloBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 100%;
+  background-color: white;
+  color: #A469CE;
+}
+.Prato .AreaIngredientes {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.Prato .AreaIngredientes .Ingredientes {
+  display: flex;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  color: #A469CE;
+}
+.Prato .ModoDePreparoTituloArea {
+  font-size: 1.3rem;
+}
+.Prato .ModoDePreparoTituloArea div {
+  margin-right: 1rem;
+}
+.Prato .Preparo {
+  background-color: #C299E0;
+}
+.Prato button {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+}
+
 body {
   background-color: #EBEBEB;
   margin: 0;
