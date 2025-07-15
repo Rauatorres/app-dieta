@@ -143,19 +143,23 @@ nav ul a:hover * {
   color: #A469CE;
 }
 .Prato .AreaIngredientes {
-  display: flex;
-  align-items: center;
   font-size: 0.8rem;
 }
 .Prato .AreaIngredientes .Ingredientes {
   display: flex;
+  flex-wrap: wrap;
 }
 .Prato .AreaIngredientes .Ingredientes .Ingrediente {
+  text-wrap: nowrap;
+  margin-bottom: 1.5rem;
   margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
   background-color: white;
   color: #A469CE;
+}
+.Prato .AreaIngredientes .AreaBotaoAddIngrediente {
+  margin: auto;
 }
 .Prato .ModoDePreparoTituloArea {
   font-size: 1.3rem;

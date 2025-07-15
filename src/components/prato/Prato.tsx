@@ -77,7 +77,7 @@ export default (props: PratoType) => {
                 </div>
                 <div className="Area AreaIngredientes">
                     <div className="Ingredientes">{mostrarIngredientes()}</div>
-                    <div><BotaoAdicionarIngrediente idPrato={props.id} setIngredientes={setIngredientes} ingredientes={ingredientes}/></div>
+                    <div className="AreaBotaoAddIngrediente"><BotaoAdicionarIngrediente idPrato={props.id} setIngredientes={setIngredientes} ingredientes={ingredientes}/></div>
                 </div>
             </div>
             <div className="Block">
