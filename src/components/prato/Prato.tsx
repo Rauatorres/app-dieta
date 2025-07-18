@@ -88,14 +88,14 @@ export default (props: PratoType) => {
                 {mostrarElemento((<Preparo texto={preparo}/>), (<Input value={preparo} onchange={(e: ChangeEvent<HTMLInputElement>) => setPreparo(e.target.value)} />))}
                 <div>
                     {mostrarElemento((
-                        <div className="Area ">
-                            <button onClick={() => {setModoEditar(true)}}>editar</button>
-                            <button onClick={excluir}>excluir</button>
+                        <div className="Area AreaBotoes">
+                            <button className="botao1" onClick={() => {setModoEditar(true)}}>editar</button>
+                            <button className="botao2" onClick={excluir}>excluir</button>
                         </div>
                     ), (
-                        <div className="Area ">
-                        <button onClick={editar}>salvar</button> 
-                        <button onClick={() => setModoEditar(false)}>cancelar</button>
+                        <div className="Area AreaBotoes">
+                        <button className="botao1" onClick={editar}>salvar</button> 
+                        <button className="botao2" onClick={() => setModoEditar(false)}>cancelar</button>
                         </div>
                     ))}
                 </div>

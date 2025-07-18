@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { apiUrl } from "../var/url";
 import { FaCheck } from "react-icons/fa6";
 
+import style from './styles/ingredientes/deleteButton.module.css';
+
 type IngredienteProps = {
     id: number,
     nome: string
@@ -58,7 +60,7 @@ export default (props: IngredienteProps) =>{
     function botaoDeletar(){
         if(mostrarBotaoDeletar){
             return(
-                <button onClick={excluirIngrediente}>-</button>
+                <button className={style.button} onClick={excluirIngrediente}>-</button>
             )
         }else{
             return(

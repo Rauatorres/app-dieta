@@ -109,7 +109,8 @@ nav ul a:hover * {
   background-color: #A469CE;
   width: fit-content;
   margin: 4rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1.3rem;
   color: white;
 }
 .Prato div {
@@ -152,11 +153,15 @@ nav ul a:hover * {
 .Prato .AreaIngredientes .Ingredientes .Ingrediente {
   text-wrap: nowrap;
   margin-bottom: 1.5rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
+  margin-left: -1rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
   background-color: white;
   color: #A469CE;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente:hover {
+  margin-right: 1rem;
 }
 .Prato .AreaIngredientes .AreaBotaoAddIngrediente {
   margin: auto;
@@ -168,6 +173,10 @@ nav ul a:hover * {
   margin-right: 1rem;
 }
 .Prato .Preparo {
+  padding: 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  min-height: 8rem;
   background-color: #C299E0;
 }
 .Prato button {
@@ -175,6 +184,33 @@ nav ul a:hover * {
   border: none;
   font-size: 1rem;
   padding: 0;
+}
+.Prato .AreaBotoes {
+  margin-top: 4rem;
+}
+.Prato .AreaBotoes button {
+  margin-right: 2rem;
+  font-size: 1.3rem;
+  padding: 0.7rem 4.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Prato .AreaBotoes .botao1 {
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}
+.Prato .AreaBotoes .botao1:hover {
+  background-color: white;
+  color: black;
+}
+.Prato .AreaBotoes .botao2 {
+  border: 2px solid #FF8581;
+  color: #FF8581;
+}
+.Prato .AreaBotoes .botao2:hover {
+  background-color: #e94b46;
+  color: #FFFFFF;
+  border-color: #e94b46;
 }
 
 body {
