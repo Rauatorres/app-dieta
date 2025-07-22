@@ -145,23 +145,42 @@ nav ul a:hover * {
 }
 .Prato .AreaIngredientes {
   font-size: 0.8rem;
+  width: auto;
+  margin-top: 4rem;
 }
 .Prato .AreaIngredientes .Ingredientes {
   display: flex;
   flex-wrap: wrap;
 }
 .Prato .AreaIngredientes .Ingredientes .Ingrediente {
+  display: flex;
+  align-items: center;
   text-wrap: nowrap;
   margin-bottom: 1.5rem;
-  margin-right: 2rem;
-  margin-left: -1rem;
+  margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 0.2rem;
   background-color: white;
   color: #A469CE;
 }
-.Prato .AreaIngredientes .Ingredientes .Ingrediente:hover {
-  margin-right: 1rem;
+.Prato .AreaIngredientes .Ingredientes .Ingrediente .IngredienteNome {
+  width: fit-content;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente input {
+  width: auto;
+  all: unset;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente .BotaoDeletarIngredienteBox, .Prato .AreaIngredientes .Ingredientes .Ingrediente .BotaoDeletarIngrediente {
+  width: 1rem;
+  height: 1rem;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente .BotaoDeletarIngredienteBox {
+  margin-left: 0.5rem;
+}
+.Prato .AreaIngredientes .Ingredientes .Ingrediente .BotaoDeletarIngrediente {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: #A469CE;
 }
 .Prato .AreaIngredientes .AreaBotaoAddIngrediente {
   margin: auto;

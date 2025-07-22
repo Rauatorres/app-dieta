@@ -21,6 +21,7 @@ export default (props: PratoType) => {
     const [display, setDisplay] = useState('block')
     const [modoEditar, setModoEditar] = useState(false);
     const [nome, setNome] = useState(props.nome);
+    const [nomeEditar, setNomeEditar] = useState(props.nome)
     const [preparo, setPreparo] = useState(preparoVerif);
     const [ingredientes, setIngredientes] = useState(props.ingredientes);
 
@@ -52,14 +53,17 @@ export default (props: PratoType) => {
         // console.log('teste');
         async function editarPrato(){
             // console.log(props.usuario);
-            await axios.put(`${apiUrl}/prato`, {
+            const res = await axios.put(`${apiUrl}/prato`, {
                 usuario: props.usuario,
                 prato: props.id,
                 campos: {
-                    nome: nome,
+                    nome: nomeEditar,
                     preparo: preparo
                 }
             });
+            if(res.data){
+                setNome(nomeEditar);
+            }
             // console.log(res.data);
         }
         editarPrato();
@@ -72,7 +76,7 @@ export default (props: PratoType) => {
             <div className="Block">
                 <div className="Area PratoTituloArea">
                     <div className="IconeTituloBox"><FaBowlFood /></div>
-                    {mostrarElemento((<span>{nome}</span>), (<Input value={nome} onchange={(e: ChangeEvent<HTMLInputElement>) => setNome(e.target.value)} />))}
+                    {mostrarElemento((<span>{nome}</span>), (<Input value={nomeEditar} onchange={(e: ChangeEvent<HTMLInputElement>) => setNomeEditar(e.target.value)} />))}
                     
                 </div>
                 <div className="Area AreaIngredientes">

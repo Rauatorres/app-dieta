@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiUrl } from "../var/url";
 import { FaCheck } from "react-icons/fa6";
 
 import style from './styles/ingredientes/deleteButton.module.css';
+import { IoIosRemove } from "react-icons/io";
 
 type IngredienteProps = {
     id: number,
@@ -16,6 +17,8 @@ export default (props: IngredienteProps) =>{
     const [modoEditar, setModoEditar] = useState(false);
     const [nome, setNome] = useState(props.nome);
     const [nomeEditar, setNomeEditar] = useState(nome);
+    const nomeIngredienteElement = useRef<HTMLInputElement>(null);
+    const [inputEditarIngredienteWidth, setInputEditarIngredienteWidth] = useState('auto');
 
     function editar(){
         async function api(){
@@ -35,8 +38,13 @@ export default (props: IngredienteProps) =>{
         if(ingredienteDisponivel){
             return (
                 <div className="Ingrediente" onMouseOver={() => setMostrarBotaoDeletar(true)} onMouseLeave={() => setMostrarBotaoDeletar(false)} >
-                    <span onClick={() => setModoEditar(true)}>
-                        {modoEditar? (<><input onBlur={editar} onChange={(e) => setNomeEditar(e.target.value)} type="text" value={nomeEditar} /></>) : nome}
+                    <span onClick={() => {
+                        setModoEditar(true); 
+                        if(nomeIngredienteElement.current != null){
+                            setInputEditarIngredienteWidth(`${nomeIngredienteElement.current.offsetWidth}px`);
+                        }
+                    }}>
+                        {modoEditar? (<><input style={{ width: inputEditarIngredienteWidth }} autoFocus onBlur={editar} onChange={(e) => setNomeEditar(e.target.value)} type="text" value={nomeEditar} /></>) : <span className="IngredienteNome" ref={nomeIngredienteElement}>{nome}</span>}
                     </span>
                     {/* {modoEditar? (<button onClick={editar}><FaCheck /></button>) : (<></>)} */}
                     {botaoDeletar()}
@@ -60,11 +68,11 @@ export default (props: IngredienteProps) =>{
     function botaoDeletar(){
         if(mostrarBotaoDeletar){
             return(
-                <button className={style.button} onClick={excluirIngrediente}>-</button>
+                <button className="BotaoDeletarIngrediente" onClick={excluirIngrediente}><IoIosRemove /></button>
             )
         }else{
             return(
-                <></>
+                <div className="BotaoDeletarIngredienteBox"></div>
             )
         }
     }
